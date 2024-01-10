@@ -1,0 +1,62 @@
+* {
+    margin: 0%;
+    font-family: sans-serif;
+}
+
+
+header {
+    background-image: url("metal.png");
+    padding: 0.5rem;
+    position: fixed;
+    width: 100%;
+
+
+    display: flex;
+    justify-content: space-between;
+
+
+    border: black solid 0.1em;
+    box-shadow: 0em .75em 0.5em rgba(0, 0, 0, 0.75);
+}
+
+
+#title {
+    color: black;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-shadow: 0em -0.0625rem 0em rgba(255,255,255,.3), 0em -0.0625rem 0em rgba(255,255,255,.7);
+}
+
+
+#settings {
+    padding: 0.5em;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+
+#timerCon {
+    margin-right: 1em;
+    ;
+    padding: .5em;
+    background-color: black;
+    color: white;
+}
+
+
+#playspace {
+    background-image: url("wood.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 13% 10% 10% 10%
+}
+
+
+#puzzlefield {
+    background-color: white;
+    padding: 20%;
+    border: black solid .1em;
+    box-shadow: 0em 0em .9em .5em rgba(0, 0, 0, 1) inset,
+        0em .2em .1em .1em rgba(255, 255, 255, 0.9) inset,
+        0em -.2em .1em .0em rgba(0, 0, 0, 0.25) inset;
+}
