@@ -34,6 +34,10 @@ header {
     font-weight: bold;
 }
 
+#file {
+    display: none;
+}
+
 
 #timerCon {
     margin-right: 1em;
@@ -48,13 +52,18 @@ header {
     background-image: url("wood.jpg");
     background-size: cover;
     background-position: center;
-    padding: 13% 10% 10% 10%
+    padding: 13% 10% 10% 10%;
 }
 
 
 #puzzlefield {
+    display: flex;
     background-color: white;
-    padding: 20%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: auto;
+    width: 100%;
     border: black solid .1em;
     box-shadow: 0em 0em .9em .5em rgba(0, 0, 0, 1) inset,
         0em .2em .1em .1em rgba(255, 255, 255, 0.9) inset,
