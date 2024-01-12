@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +8,30 @@
     <title>Jigsaw Puzzle</title>
     <link rel="stylesheet" href="styling.css">
 </head>
+
 <body>
     <header>
-        <button id="settings">Settings</button>
-        <input type="file" accept="image/*" name="img" id="file" onchange="loadFile(event)">        <!-- Inspiration: https://www.youtube.com/watch?v=73Pnj4MfhzI -->
-        <label for="file">Upload Image</label>
-        <center><h1 id="title">Jigsaw Puzzle</h1></center>
+        <div id="dropdown">
+            <span id="settings">Settings</span>
+            <div id="dropdownContent">
+                <input type="file" accept="image/*" name="img" id="file" onchange="loadFile(event)">
+                <!-- Inspiration: https://www.youtube.com/watch?v=73Pnj4MfhzI -->
+                <label for="file">Upload Image</label>
+            </div>
+        </div>
+        <center>
+            <h1 id="title">Jigsaw Puzzle</h1>
+        </center>
         <h3 id="timerCon">Time: <span id="timer">0:00</span></h6>
     </header>
 
     <div id="playspace">
-        <center><div id="puzzlefield"></div></center>
+        <center>
+            <div id="puzzlefield"></div>
+        </center>
     </div>
 
     <script src="scripting.js"></script>
 </body>
+
 </html>

@@ -29,9 +29,27 @@ header {
 
 
 #settings {
+    display: inline-block;
+    position: relative;
     padding: 0.5em;
-    font-size: 1em;
+    font-size: 1.em;
     font-weight: bold;
+    background-color: white;
+}
+
+/* https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_text */
+#dropdownContent {
+    display: none;
+    position: absolute;
+    padding: 0.5em;
+    font-size: 1.em;
+    font-weight: bold;
+    background-color: white;
+}
+
+#dropdown:hover #dropdownContent {
+    display: block;
+    cursor: pointer;
 }
 
 #file {
