@@ -11,18 +11,27 @@
 
 <body>
     <header>
-        <div id="dropdown">
+        <div class="dropdown">
             <span id="settings">Settings</span>
-            <div id="dropdownContent">
-                <input type="file" accept="image/*" name="img" id="file" onchange="loadFile(event)">
+            <div class="dropdownContent">
+                <!-- <input type="file" accept="image/*" name="img" id="file" onchange="loadFile(event)"> -->
                 <!-- Inspiration: https://www.youtube.com/watch?v=73Pnj4MfhzI -->
-                <label for="file">Upload Image</label>
+                <!-- <label for="file">Upload Image</label> -->
+
+                <button id="reset" onclick="resetGame();">Reset</button>
+
+                <div id="pieceSize">
+                    <p>Select Number of Puzzles</p>
+                    <button onclick="startGame();">16pc</button>
+                    <button onclick="startGame();">36pc</button>
+                    <button onclick="startGame();">64pc</button>
+                </div>
             </div>
         </div>
         <center>
             <h1 id="title">Jigsaw Puzzle</h1>
         </center>
-        <h3 id="timerCon">Time: <span id="timer">0:00</span></h6>
+        <h3 id="timerCon">Time: <span id="timer">00:00:00</span></h6>
     </header>
 
     <div id="playspace">

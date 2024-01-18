@@ -37,17 +37,45 @@ header {
     background-color: white;
 }
 
+#reset {
+    display: none;
+}
+
 /* https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_text */
-#dropdownContent {
+.dropdownContent {
     display: none;
     position: absolute;
     padding: 0.5em;
     font-size: 1.em;
     font-weight: bold;
     background-color: white;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 1px 1px 3px 0 black;
 }
 
-#dropdown:hover #dropdownContent {
+.dropright {
+    display: flex;
+}
+
+.droprightContent {
+    display: none;
+    position: absolute;
+    padding: 0.5em;
+    font-size: 1.em;
+    font-weight: bold;
+    background-color: white;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 1px 1px 3px 0 black;
+}
+
+.dropdown:hover .dropdownContent {
+    display: block;
+    cursor: pointer;
+}
+
+.dropdown:hover .droprightContent {
     display: block;
     cursor: pointer;
 }
