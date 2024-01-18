@@ -108,8 +108,9 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    height: auto;
-    width: 100%;
+    background-image: url("motion-cat-cat-with-money.png");
+    height: 50rem;
+    width: 50rem;
     border: black solid .1em;
     box-shadow: 0em 0em .9em .5em rgba(0, 0, 0, 1) inset,
         0em .2em .1em .1em rgba(255, 255, 255, 0.9) inset,

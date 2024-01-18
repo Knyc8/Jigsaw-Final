@@ -24,11 +24,6 @@ startGame = () => {
     reset.style.display = "flex";
 }
 
-// resetGame = () => {
-//     pieceSize.style.display = "block";
-//     reset.style.display = "none";
-// }
-
 const startTime = async () => {
     setInterval(() => {
         timerContent = "";
