@@ -101,8 +101,8 @@ header {
     background-position: center;
     height: 100%;
     width: 100%;
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -113,23 +113,23 @@ header {
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
-    background-color: white;
+    /* background-color: white; */
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    /* background-image: url("motion-cat-cat-with-money.png"); */
+    background-image: url("/res/puzzle.jpg"); 
     height: 500px;
     width: 500px;
     border: black solid .1em;
-    box-shadow: 0em 0em .9em .5em rgba(0, 0, 0, 1) inset,
+    /* box-shadow: 0em 0em .9em .5em rgba(0, 0, 0, 1) inset,
         0em .2em .1em .1em rgba(255, 255, 255, 0.9) inset,
-        0em -.2em .1em .0em rgba(0, 0, 0, 0.25) inset;
+        0em -.2em .1em .0em rgba(0, 0, 0, 0.25) inset; */
 }
 
 #puzzlefield img {
-    width: 59.25px;
-    height: 59.25px;
-    border: 0.1em solid black;
+    width: 60.6px;
+    height: 60.6px;
+    border: 1px solid lightgray;
 }
 
 #piecesCon1 {
@@ -155,13 +155,17 @@ header {
 }
 
 #piecesCon1 img {
-    width: 59.25px;
-    height: 59.25px;
-    border: 0.1em solid black;
+    width: 60.6px;
+    height: 60.6px;
+    border: 1px solid lightgray;
 }
 
 #piecesCon2 img {
-    width: 59.25px;
-    height: 59.25px;
-    border: 0.1em solid black;
+    width: 60.6px;
+    height: 60.6px;
+    border: 1px solid lightgray;
+}
+
+.incomplete button{
+    background-color: gray;
 }

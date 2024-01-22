@@ -6,6 +6,7 @@ let hour = 0;
 let min = 0;
 let sec = 0;
 
+//Starts game and resets
 startGame = () => {
     var refreshID = startTime();
     console.log(refreshID);
@@ -24,6 +25,7 @@ startGame = () => {
     reset.style.display = "flex";
 }
 
+//Starts the timer
 const startTime = async () => {
     setInterval(() => {
         timerContent = "";
@@ -56,20 +58,8 @@ const startTime = async () => {
     }, 1000)
 }
 
-// const puzzleImg = document.getElementById('puzzlefield');
-
-// var loadFile = (event) => {
-//     var imgUrl = URL.createObjectURL(event.target.files[0]);
-
-//     puzzleImg.style.backgroundImage = `url(${imgUrl})`;
-
-//     puzzleImg.style.height = "40rem";
-//     puzzleImg.style.width = "50rem";
-
-//     startTime();
-// }
-
-const puzzlefield = document.getElementById("puzzlefield");
+/***** Upload image *****/
+const puzzleImg = document.getElementById('puzzlefield');
 
 var rows = 8;
 var cols = 8;
@@ -77,39 +67,89 @@ var cols = 8;
 var currPiece;
 var otherPiece;
 
-window.onload = () => {
-    for (let row = 0; row <rows; row++) {
-        for (let col=0; col < cols; col++) {
+setPieces = () => {
+    //initializes the empty board
+    puzzleImg.style.backgroundImage = "none";
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
             let piece = document.createElement("img");
-            piece.src = "/res/empty.jpg";
+            piece.src = "./res/empty.jpg";
 
-            puzzlefield.append(piece)
+            //allows dragability
+            piece.addEventListener("dragstart", dStart); 
+            piece.addEventListener("dragover", dOver);   
+            piece.addEventListener("dragenter", dEnter); 
+            piece.addEventListener("dragleave", dLeave); 
+            piece.addEventListener("drop", dDrop);       
+            piece.addEventListener("dragend", dEnd);      
+            puzzleImg.append(piece);
         }
     }
 
+    //initializes the amount of pieces and their dimensions
     let pieces = [];
-    for (let i=1; i<=rows*cols; i++) {
-        pieces.push(i.toString());
+    for (let i = 0; i < rows * cols; i++) {
+        pieces.push(i.toString()); 
     }
 
+    //Shuffles
     pieces.reverse();
-    for (let i=0; i<pieces.length; i++) {
+    for (let i = 0; i < pieces.length; i++) {
         let j = Math.floor(Math.random() * pieces.length);
         let temp = pieces[i];
         pieces[i] = pieces[j];
         pieces[j] = temp;
     }
 
-    console.log(pieces);
-
-    for (i = 0; i < pieces.length; i++) {
+    //Sets the pieces to the puzzle container
+    for (let i = 0; i < pieces.length; i++) {
         let piece = document.createElement("img");
-        piece.src = `./res/${pieces[i]}.jpg`;
-        if (i<pieces.length/2) {
+        piece.src = "./res/" + pieces[i] + ".jpg";
+
+        //DRAG FUNCTIONALITY
+        piece.addEventListener("dragstart", dStart); 
+        piece.addEventListener("dragover", dOver);   
+        piece.addEventListener("dragenter", dEnter); 
+        piece.addEventListener("dragleave", dLeave); 
+        piece.addEventListener("drop", dDrop);      
+        piece.addEventListener("dragend", dEnd);     
+
+        if (i < pieces.length / 2) {
             document.getElementById("piecesCon1").append(piece);
         }
         else {
             document.getElementById("piecesCon2").append(piece);
         }
     }
+}
+
+/***** Drag Functions *****/
+function dStart() {
+    currPiece = this; 
+}
+
+function dOver(e) {
+    e.preventDefault();
+}
+
+function dEnter(e) {
+    e.preventDefault();
+}
+
+function dLeave() {
+
+}
+
+function dDrop() {
+    otherPiece = this; 
+}
+
+function dEnd() {
+    if (currPiece.src.includes("empty")) {
+        return;
+    }
+    let currPieceImg = currPiece.src;
+    let otherPieceImg = otherPiece.src;
+    currPiece.src = otherPieceImg;
+    otherPiece.src = currPieceImg;
 }
