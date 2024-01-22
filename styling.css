@@ -128,8 +128,8 @@ header {
     background-position: center;
     height: 100%;
     width: 100%;
-    padding-top: 7rem;
-    padding-bottom: 7rem;
+    padding-top: 14rem;
+    padding-bottom: 14rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -153,8 +153,8 @@ header {
 }
 
 #puzzlefield img {
-    width: 60.6px;
-    height: 60.6px;
+    width: 59px;
+    height: 59px;
     border: 1px solid lightgray;
 }
 
@@ -181,14 +181,14 @@ header {
 }
 
 #piecesCon1 img {
-    width: 60.6px;
-    height: 60.6px;
+    width: 59px;
+    height: 59px;
     border: 1px solid lightgray;
 }
 
 #piecesCon2 img {
-    width: 60.6px;
-    height: 60.6px;
+    width: 59px;
+    height: 59px;
     border: 1px solid lightgray;
 }
 
