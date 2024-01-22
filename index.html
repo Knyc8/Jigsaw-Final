@@ -19,6 +19,7 @@
                 <!-- <label for="file">Upload Image</label> -->
 
                 <button id="reset" onclick="location.reload();">Reset</button>
+                <button id="preview" onclick="showPreview();">Preview</button>
 
                 <div id="pieceSize">
                     <p>Select Number of Puzzles</p>
@@ -27,6 +28,9 @@
                     <button onclick="startGame(); setPieces();">64pc</button>
                 </div>
             </div>
+        </div>
+        <div id="previewCon">
+            <button id="exit" onclick="closePreview();">X</button>
         </div>
         <center>
             <h1 id="title">Jigsaw Puzzle</h1>

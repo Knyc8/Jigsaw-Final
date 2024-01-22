@@ -1,6 +1,8 @@
 const timer = document.getElementById('timer');
 const pieceSize = document.getElementById('pieceSize');
 const reset = document.getElementById('reset');
+const preview = document.getElementById('preview');
+const previewCon = document.getElementById('previewCon');
 
 let hour = 0;
 let min = 0;
@@ -23,6 +25,15 @@ startGame = () => {
 
     pieceSize.style.display = "none";
     reset.style.display = "flex";
+    preview.style.display = "flex";
+}
+
+const showPreview = () => {
+    previewCon.style.display = "flex";
+}
+
+const closePreview = () => {
+    previewCon.style.display = "none";
 }
 
 //Starts the timer
@@ -76,12 +87,12 @@ setPieces = () => {
             piece.src = "./res/empty.jpg";
 
             //allows dragability
-            piece.addEventListener("dragstart", dStart); 
-            piece.addEventListener("dragover", dOver);   
-            piece.addEventListener("dragenter", dEnter); 
-            piece.addEventListener("dragleave", dLeave); 
-            piece.addEventListener("drop", dDrop);       
-            piece.addEventListener("dragend", dEnd);      
+            piece.addEventListener("dragstart", dStart);
+            piece.addEventListener("dragover", dOver);
+            piece.addEventListener("dragenter", dEnter);
+            piece.addEventListener("dragleave", dLeave);
+            piece.addEventListener("drop", dDrop);
+            piece.addEventListener("dragend", dEnd);
             puzzleImg.append(piece);
         }
     }
@@ -89,7 +100,7 @@ setPieces = () => {
     //initializes the amount of pieces and their dimensions
     let pieces = [];
     for (let i = 0; i < rows * cols; i++) {
-        pieces.push(i.toString()); 
+        pieces.push(i.toString());
     }
 
     //Shuffles
@@ -107,12 +118,12 @@ setPieces = () => {
         piece.src = "./res/" + pieces[i] + ".jpg";
 
         //DRAG FUNCTIONALITY
-        piece.addEventListener("dragstart", dStart); 
-        piece.addEventListener("dragover", dOver);   
-        piece.addEventListener("dragenter", dEnter); 
-        piece.addEventListener("dragleave", dLeave); 
-        piece.addEventListener("drop", dDrop);      
-        piece.addEventListener("dragend", dEnd);     
+        piece.addEventListener("dragstart", dStart);
+        piece.addEventListener("dragover", dOver);
+        piece.addEventListener("dragenter", dEnter);
+        piece.addEventListener("dragleave", dLeave);
+        piece.addEventListener("drop", dDrop);
+        piece.addEventListener("dragend", dEnd);
 
         if (i < pieces.length / 2) {
             document.getElementById("piecesCon1").append(piece);
@@ -125,7 +136,7 @@ setPieces = () => {
 
 /***** Drag Functions *****/
 function dStart() {
-    currPiece = this; 
+    currPiece = this;
 }
 
 function dOver(e) {
@@ -141,7 +152,7 @@ function dLeave() {
 }
 
 function dDrop() {
-    otherPiece = this; 
+    otherPiece = this;
 }
 
 function dEnd() {

@@ -42,6 +42,33 @@ header {
     display: none;
 }
 
+#preview {
+    display: none;
+}
+
+#previewCon {
+    top: 17%;
+    left: 5%;
+    margin: 5%;
+    position: absolute;
+    background-image: url('puzzle.jpg');
+    height: 600px;
+    width: 600px;
+    border: white 0.1rem solid;
+    display: none;
+}
+
+#exit {
+    height: 25px;
+    width: 25px;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+#exit:hover {
+    background-color: lightblue;
+}
+
 /* https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_text */
 .dropdownContent {
     display: none;
