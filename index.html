@@ -22,7 +22,7 @@
 
                 <div id="pieceSize">
                     <p>Select Number of Puzzles</p>
-                    <button onclick="startGame();">16pc</button>
+                    <button onclick="startGame(); initBoard();">16pc</button>
                     <button onclick="startGame();">36pc</button>
                     <button onclick="startGame();">64pc</button>
                 </div>
@@ -35,9 +35,9 @@
     </header>
 
     <div id="playspace">
-        <center>
+            <div id="piecesCon1"></div>
             <div id="puzzlefield"></div>
-        </center>
+            <div id="piecesCon2"></div>
     </div>
 
     <script src="scripting.js"></script>

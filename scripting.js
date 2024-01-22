@@ -68,3 +68,48 @@ const startTime = async () => {
 
 //     startTime();
 // }
+
+const puzzlefield = document.getElementById("puzzlefield");
+
+var rows = 8;
+var cols = 8;
+
+var currPiece;
+var otherPiece;
+
+window.onload = () => {
+    for (let row = 0; row <rows; row++) {
+        for (let col=0; col < cols; col++) {
+            let piece = document.createElement("img");
+            piece.src = "/res/empty.jpg";
+
+            puzzlefield.append(piece)
+        }
+    }
+
+    let pieces = [];
+    for (let i=1; i<=rows*cols; i++) {
+        pieces.push(i.toString());
+    }
+
+    pieces.reverse();
+    for (let i=0; i<pieces.length; i++) {
+        let j = Math.floor(Math.random() * pieces.length);
+        let temp = pieces[i];
+        pieces[i] = pieces[j];
+        pieces[j] = temp;
+    }
+
+    console.log(pieces);
+
+    for (i = 0; i < pieces.length; i++) {
+        let piece = document.createElement("img");
+        piece.src = `./res/${pieces[i]}.jpg`;
+        if (i<pieces.length/2) {
+            document.getElementById("piecesCon1").append(piece);
+        }
+        else {
+            document.getElementById("piecesCon2").append(piece);
+        }
+    }
+}
