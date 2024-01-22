@@ -113,11 +113,10 @@ header {
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
-    /* background-color: white; */
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    background-image: url("/res/puzzle.jpg"); 
+    background-image: url("puzzle.jpg"); 
     height: 500px;
     width: 500px;
     border: black solid .1em;
